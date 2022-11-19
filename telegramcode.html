@@ -1,0 +1,14 @@
+ var TelegramBot = require("node-telegram-bot-api");
+
+var token = "5479052786:AAGBL7SEG4AYHBW7syyEw-lDxxcUgkI2KIU";
+
+var bot = new TelegramBot(token, {polling: true});
+
+bot.on("message",function(affu){
+    console.log(affu.text);
+    if(affu.text =="even or odd"){
+    bot.sendMessage(affu.chat.id,"even");
+    }else {
+        bot.sendMessage(affu.chat.id,"odd");
+    }
+});
